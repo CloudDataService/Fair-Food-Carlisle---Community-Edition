@@ -1,0 +1,34 @@
+/* command style */
+.noprint {
+	display: none;
+}
+
+
+.break-parent {
+	float: none;
+}
+.break {
+	page-break-after: always;
+	float: none;
+	position: relative;
+}
+
+/* template */
+body, html {
+	background: #fff;
+}
+
+.content {
+	border: 1px solid #999;
+}
+.developedby, .developedby a {
+	color: #333;
+	text-decoration: none;
+}
+
+
+/* specific for picking list */
+.customer-name {
+	font-size: 20px;
+	line-height: 1.5;
+}

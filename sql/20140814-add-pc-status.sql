@@ -1,0 +1,1 @@
+ALTER TABLE `productcommitment` ADD `pc_status` INT(2) NOT NULL DEFAULT '1' ;

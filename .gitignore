@@ -1,0 +1,87 @@
+application/controllers/session.php
+public_html/img/uploads/*
+!public_html/img/uploads/no-image.png
+
+
+
+########################################
+###   SOME SENSIBLE DEFAULTS BELOW   ###
+# https://github.com/github/gitignore  #
+########################################
+
+##############################
+### CodeIgntiter ###
+
+*/config/development/config.php
+*/config/development/database.php
+*/config/development/sentry.php
+*/config/staging/config.php
+*/config/staging/database.php
+*/config/staging/sentry.php
+*/logs/log-*.php
+*/logs/!index.html
+*/logs/*/log-*.php
+*/logs/*/sql-*.php
+*/logs/*/!index.html
+*/cache/*
+*/cache/!index.html
+
+### /END CodeIgniter ###
+##############################
+
+
+##############################
+### OSX ###
+
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### /END OSX ###
+##############################
+
+
+##############################
+### WIN ##
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### /END WIN ###
+##############################
+
+
+##############################
+### SVN ###
+
+.svn/
+
+### /END SVN ###
+##############################
+
+
+##########################################
+###         KEEP THE FOLLOWING         ###
+
+!.gitkeep
+!.htaccess
+!index.html
+
+##########################################

@@ -1,0 +1,16 @@
+Some notes on code stuff.
+
+
+The MultiAdd of awesomeness is javascript used on a few occasions.
+In a form, several fields can be added, and a button. When the button is clicked, those fields will be added to a list with hidden array fields.
+Add code like this
+<fieldset class="multiadd" id="SOMETHING">
+	<input ref="A-FIELD" multiadd_label="TEXT">
+	more inputs...
+	<??? class="multiadd_btn">+</???>
+	</fieldset>
+	<ul id="SOMETHING_list">
+Will add
+	<li><input type=hidden name="A-FIELD"> TEXT
+	...other inputs... </li>
+	

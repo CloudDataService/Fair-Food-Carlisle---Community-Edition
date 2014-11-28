@@ -1,0 +1,23 @@
+How the system works
+
+Buying Group -> has one delivery address
+Buying Group Advocate - is nothing special
+					  - is shown to FFC staff as the point of contact
+Each BG member logs in and orders their food
+Any BG member can view the BG signup code to give to new people in their office/community
+
+
+SIGN UP PROCESS
+Contact Form -> Request to join (new BG)
+[FFC talk offline to BG]
+FFC creates the BG on the website, supplying the Advocate's email
+Advocate gets an e-mail to enter remaining details and sign up
+Advocate sees BG signup code and distributes this
+People come to the website and use the BG signup code to register
+
+
+Availability Seasons/Periods
+|--a--[start]===b===[end]
+Reegardless of current time, you can only make deliveries for the time marked as b.
+During a, there must be at least preorder_days between the current date and start date.
+During b, there must be at least predelivery_days between the current date and the date you want to order for.

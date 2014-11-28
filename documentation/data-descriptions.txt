@@ -1,0 +1,85 @@
+/* Descriptions on data items, what the fields/values mean */
+
+/* Db table: buyinggroup */
+bg_code
+	a generated, unique code. People enter this when signing up & so get assigned to the buying group they know about
+bg_status
+	"New"		Group has been created by FFC staff, buy BG advocatge hasn't gone and provided the extra details yet
+	"Active"	All details provided, group is open to buy stuff
+	"Inactive"	Group disabled for some reason. Check functionality changes for this!
+bg_deliveryday
+	Set to Tuesday. Day they get stuff.
+
+/* Db table: orderitem */
+oi_status
+	"Reserved"	set by customer		has 'added to basket' but not confirmed, stock level has been lowered
+	"Confirmed"	set by customer		has been confirmed, should be delivered and should be charged for
+	"Cancelled" 	set by customer		they decided they didn't want it, should be ignored
+	"Expired"	set autmotically	the stock was reserved, but the customer didn't confirm within 30 or so minutes
+	"Rejected"	set by FCC staff	the staff decided this would not be delivered, may be due to bad stock
+	"Unavailable"	set by customer/system	the customer tried to order an Expired item, but it wasn't unavailable
+
+/* Db table: order_recurring */
+Takes notes of a product that a customer wants to order indefinetly.
+Each day this should be checked and new orderitems generated if needed, so they are 3 months(config setting) ahead of today.
+or_id
+or_u_id
+or_s_id
+or_p_id
+or_qty			quantity per date
+	(price and cost should be calculated when the item is created, in case they change)
+or_frequency		"weekly" or "fortnightly"
+or_status
+	"Pending"	awaiting confirmation
+	"Confirmed"	in use!!
+	"Cancelled"	never started
+	"Stopped"	set by customer, stop recurring
+	"Finished"	set by FCC staff, product may be discontinued
+or_started_date		delivery date of first order
+or_latest_date		delivery date of the last oi to be created
+or_finished_date	the datetime the recurring order was stopped/finished (not a delivery date)
+
+
+
+/* Db table: bill_adjustment */
+Contains additional items to add to bills, e.g. discounts if products unavailable or additions if they got a more expensive item.
+ba_id
+ba_b_id		The bill it belongs to
+ba_description	Displayed like a product supplier/name. "Name of product and reason you are changing the price."
+ba_price	Could be preceeded with -(minus) for discounts.
+ba_applied_date	The date/time it was applied to the bill
+ba_applied_user	The staff member who added the adjustment
+
+	
+/* Db table: bill */
+Used to group(by date?) orderitems for billing purposes
+b_id
+b_price		(total)
+b_cost		(cost)
+b_payment_method
+	"Go Cardless"
+	"Cheque"
+	"Other"
+b_status
+	"Draft"		Awaiting staff confirmation	(probably generated automatically)
+	"Pending"	Awaiting customer payment	
+	"Paid"		Horray		(could have been set my staff if they got a cheque)
+b_note
+	
+
+
+/* Payment */
+By Go Cardless, Cheque, or Other.
+The latter two you have to message FCC staff to say you've paid
+
+
+/* Db table: system_log */
+Is used to note actions taken automatically (i.e. from a cron) by the system. Useful for debugging.
+sl_id
+sl_type		Brief text that may be used for searching certain types of logs. E.g. "Email", "AutoOrder".
+sl_description	Detail of exactly what happened
+sl_u_id		Who was affected
+sl_focus_type	Word describing the next column. E.g. Bill, OrderRecurring, etc.
+sl_focus_id	ID of what the focus was (see sl_focus_type to know what table to look it up in)
+
+

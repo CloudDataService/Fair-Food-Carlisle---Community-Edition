@@ -1,0 +1,734 @@
+/**
+ * Food Shop
+ *
+ * Dark green:		045628
+ * Orange:			f19607
+ * Teal:			428B73
+ */
+body, html {
+	font-family: "Century Gothic", "Lucida Grande", Helvetica, Arial !important;
+	background: #428B73;
+}
+
+.navbar {
+	background: #fff;
+}
+	body.admin .navbar {
+		background: #F19607;
+	}
+	body.admin .nav-container {
+		background: #F19607;
+	}
+	#admin-label {
+		position: absolute;
+		top: 10px;
+		left: 90px;
+		font-size: 24px;
+		font-weight: bold;
+		color: #fff;
+	}
+
+	#menu li.nav-special {
+		background: #f19607;
+	}
+	#menu li.nav-special.open {
+		color: #045628;
+	}
+	.js-load-orders img.loadicon {
+		margin: -1px -15px -1px 10px;
+		visibility: hidden;
+	}
+
+	.loaded-orders {
+		z-index: 100;
+		display: inline-block;
+		position: absolute;
+		top: 28px;
+		right: 1px;
+		background: #efefef;
+		border: 4px #ddd solid;
+		padding: 20px 5px 5px 5px;
+		width: 500px;
+		max-height: 400px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	.loaded-orders table.results {
+		width: 100%;
+	}
+
+.header {
+	z-index:2;
+}
+	.header h1 {
+	/*
+		display:inline;
+		line-height: 40px;
+		height: 40px;
+		vertical-align:center;
+	*/
+	}
+	.header .slogan_container {
+		padding: 45px 0;
+	}
+	.header .slogan_container .slogan {
+		color: #fff;
+		font-size: 18px;
+		line-height: 1.5;
+		font-weight: bold;
+		font-style: italic;
+		margin-left: 190px;
+		display:block;
+	}
+	.header .logo a {
+		position: absolute;
+		z-index: 2;
+		margin-top: -15px;
+	}
+
+.breadcrumb {
+	float:right;
+	font-size: 16px;
+	margin -60px;
+}
+
+.content {
+	padding: 40px 40px 10px 40px;
+	background: #fff;
+}
+
+.footer {
+	margin-top: 30px;
+	padding: 10px 40px;
+	background: #fff;
+}
+
+.content, .footer {
+	border-radius: 10px;
+}
+
+.developedby {
+	background: none;
+	color:#fff;
+	font-size:11px;
+	line-height:12px;
+	padding-left:10px;
+	padding-top:5px;
+}
+
+	.developedby a {
+		color: #fff;
+	}
+
+.alert {
+		float: right;
+		border-radius: 10px;
+		margin-bottom: 0;
+		margin-right: -20px;
+}
+
+label.error {
+	/* validation errors */
+	color: #c90000;
+	font-weight: bold;
+}
+
+.confirm-prompt {
+	width:500px;
+	border: 3px solid #f19607;
+	border-radius: 10px;
+	padding:3px;
+	background: #ffd4aa;
+	font-weight: bold;
+}
+
+/* Tables */
+table.results tr.order th {
+	/* background: #428B73; */
+}
+
+a.btn, span.btn {
+	margin:3px;
+	padding: 3px 12px;
+	border-radius: 5px;
+	border: 1px solid #428b73;
+	background: #eee;
+	color: #428b73;
+	text-decoration: none;
+	cursor: pointer;
+}
+a.btn:hover, span.btn:hover {
+	background: #fff;
+}
+
+input.btn {
+	margin:3px;
+	padding: 3px 12px;
+	border-radius: 5px;
+	border: 1px solid #428b73;
+	background: #eee;
+	color: #428b73;
+	text-decoration: none;
+	cursor: pointer;
+}
+input.btn:hover {
+	background: #fff;
+}
+
+input.btn:disabled {
+	border: 2px solid #eee;
+	background: #aaa;
+	cursor: default;
+}
+
+/*
+.header {
+	padding: 40px 0 30px 0;
+}
+
+.menu {
+	background: url(../img/style/shadow-white.png) top left repeat-x #fff;
+	padding-top: 1px;
+	min-height: 10px;
+}
+	.menu .user {
+		padding-top: 10px;
+		font-size: 12px;
+	}
+
+	.menu .nav { margin: 0; }
+	.menu .nav li { margin-left: 10px; }
+
+	.menu .button {
+	}
+
+
+.content {
+	padding: 15px 0;
+}
+	.content .container {
+		padding-bottom: 0px;
+	}
+
+	.content.main { padding-bottom: 15px; }
+
+	.home.login .content.main { padding-bottom: 0; }
+	.home.login .content.main .container {
+		background: url(../img/style/people-large.jpg) bottom left no-repeat #fff;
+		min-height: 397px;
+	}
+
+.footer {
+	padding: 50px 0 3px 0;
+	background: url(../img/style/shadow-grey.png) top left repeat-x transparent;
+	font-size: 11px;
+	line-height: 1.5;
+	color: #999;
+}
+
+
+
+.block { padding: 20px; }
+
+	.block.green { background: #7ac142; color: #fff; }
+	.block.green a { color: #fff; }
+
+
+
+
+.login-container {
+	margin-right: 40px;
+	width: 320px;
+	float: right;
+}
+	.login-container .text-input {
+		width: 98%;
+	}
+
+*/
+
+/* Heading with the intro style - italic. Should be h2 tags or beta class */
+.intro {
+	font-style: italic;
+	font-weight: normal;
+}
+
+
+/* Horizontal icon nav */
+.nav.icons a {
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* General styles for Food Hub site */
+h2 {
+	font-weight: normal;
+}
+
+/* Item lists (boxes), e.g. category index page */
+.item_list {
+
+}
+	.item_list .item_preview {
+		position: relative;
+		float: left;
+		width: 140px;
+		margin-right: 40px;
+		margin-bottom: 40px;
+		min-height: 307px;
+		max-height: 307px;
+	}
+		.item_list .item_preview .feature {
+			position: relative;
+			right: 10px;
+			top: -10px;
+			z-index: 10;
+			width: 50px;
+			height:50px;
+			border-radius: 50%;
+			text-align: center;
+			color: #045628;
+			font-weight: bold;
+			border: 3px dotted #f19607;
+		}
+			.item_list .item_preview .feature .feature-inner {
+				width: 50px;
+				height:50px;
+				top: 3px;
+				left: 3px;
+				border-radius: 50%;
+				background: #f19607;
+			}
+			.item_list .item_preview .feature span {
+				position: relative;
+				top: 15px;
+				text-transform: uppercase;
+			}
+
+			.item_list .item_preview .image.postfeature {
+				margin-top: -56px;
+			}
+		.item_list .item_preview .sellout {
+			position: relative;
+			right: 10px;
+			top: 60px;
+			z-index: 10;
+			text-align: center;
+			color: #fff;
+			font-weight: bold;
+		}
+			.item_list .item_preview .sellout .sellout-inner {
+				width: 160px;
+				background: #922;
+				opacity: 1;
+			}
+			.item_list .item_preview .sellout span {
+				position: relative;
+			}
+			.item_list .item_preview .image.postsellout {
+				margin-top: -20px;
+			}
+
+		.item_list .item_preview .image {
+			min-height: 140px; max-height: 140px;
+			min-width: 140px; max-width: 140px;
+			overflow: hidden;
+		}
+		.item_list .item_preview img {
+			cursor:pointer;
+		}
+		.item_list .item_preview h3 {
+			margin-bottom: 0;
+			font-size:14px;
+			font-weight: bold;
+		}
+			.item_list .item_preview h3 a {
+				text-decoration: none;
+			}
+			.item_list.products .item_preview h3 {
+				min-height:42px;
+			}
+		.item_list .item_preview h3 a:hover {
+			color: #f19607;
+		}
+		.item_list .item_preview .supplier {
+			margin-bottom:0;
+			font-style:italic;
+		}
+		.item_list .item_preview .price {
+			margin-bottom:7px;
+		}
+		.item_list .item_preview p.description {
+			overflow: hidden;
+			height: 164px;
+		}
+
+/* Styles for the product page */
+h2.product-title {
+	margin-bottom: -6px;
+}
+p.product-supplier {
+	margin-bottom: 0;
+}
+#product-page {
+	margin: 0;
+}
+#product-info, #supplier-info {
+	margin: 0;
+}
+	#product-image, #supplier-image {
+		float: left;
+		margin: 0 40px 0 0;
+		width: 200px;
+	}
+		#product-image p {
+			margin-bottom: 0;
+		}
+		#product-image p.product-caption {
+			font-weight: bold;
+		}
+		#product-image p.price {
+			font-style:italic;
+		}
+	#product-description, #supplier-description {
+		float: left;
+		margin: 0 40px 0 0;
+		width: 290px;
+	}
+#supplier-info {
+	margin-top: 30px;
+	background: green;
+}
+	#supplier-image .supplier-title {
+		margin: 0;
+		font-weight: bold;
+	}
+
+.product-stock-warning {
+	float: left;
+	margin: 10px 0 5px 0;
+	margin-left: 0 !important;
+	padding: 5px;
+	background: #ffc8c9;
+	border: 1px solid #f1acad;
+}
+	.product-stock-warning h3 {
+		display: inline-block;
+		margin: 0;
+	}
+	.product-stock-warning p {
+		display: inline-block;
+		padding-left: 10px;
+		margin: 0;
+	}
+
+#product-ordering {
+	float: left;
+	margin: 0;
+	padding: 10px;
+	background: #d9e7e3;
+}
+	#product-ordering label {
+		margin-top: 10px;
+		font-weight: bold;
+	}
+		#product-ordering label .stepcount
+		{
+			display: inline-block;
+			padding: 6px 0;
+			border: 1px solid #428b73;
+			border-radius: 16px;
+			background: #eee;
+			color: #428b73;
+			font-size: 16px;
+			width: 30px;
+			height: 18px;
+			text-align: center;
+		}
+
+	.seasonkey {
+		margin: 3px 0;
+	}
+		.seasonkey .keyicon {
+			min-width: 20px; width: 20px;
+			min-height: 20px; height: 20px;
+			display: block;
+			float: left;
+		}
+		.seasonkey .keytext {
+			float: left;
+			margin: 0 5px 15px 5px;
+			font-size: 11px;
+		}
+
+	#commitment_notes {
+		display: none;
+		clear: both;
+		padding: 5px;
+		background: #fcffa6;
+	}
+
+	ul#orderdates {
+
+	}
+		ul#orderdates li {
+			margin: 5px 0;
+			padding: 10px;
+			background: #f5f5f5;
+		}
+		ul#orderdates li .price {
+			font-weight: bold;
+		}
+
+	#orderitem_btn {
+		float: right;
+		width: 100px;
+		height: 45px;
+		margin-top: -6px;
+		font-size: 14px;
+	}
+
+	.oi-recurring-note {
+		display: block;
+		margin: -10px 0 -10px 20px;
+	}
+
+/* Super-awesome "Cal Nine K" order calendar thing */
+.calNineK {
+	background: #efefef;
+	padding: 5px;
+}
+	.calNineK .calNineK-section {
+		text-align: left;
+	}
+	.calNineK .calNineK-section.calNineK-section-Year, .calNineK .calNineK-section.calNineK-section-Month {
+		border-bottom: 1px solid #cbcbcb;
+		margin-bottom: 10px;
+	}
+	.calNineK-section.calNineK-section-Year{
+	}
+
+
+	.calNineK-section-label {
+		margin: 0 2px;
+		min-width: 64px;
+		color: #8c8c8c;
+		vertical-align: top;
+		text-align: left;
+		font-size: 20px;
+		font-weight: bold;
+		display: inline-block;
+	}
+
+	.calNineK-category-element {
+		background: none;
+		border: 0;
+		text-align: left;
+		font-size: 20px;
+		font-weight: bold;
+		color: #5a5a5a;
+		margin: 1px;
+		display: inline-block;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+		.calNineK-section-Year .calNineK-category-element {
+			width: 60px;
+		}
+		.calNineK-section-Month .calNineK-category-element {
+			width: 60px;
+		}
+
+		.calNineK-category-element.selected {
+			color: #f19607;
+		}
+		.calNineK-category-element.hidden {
+			display: none;
+		}
+
+	.calNineK-day-element {
+		margin-right: 5px;
+		width: 43px;
+		font-size: 12px;
+		display: inline-block;
+		overflow: hidden;
+		color: #999;
+		cursor: not-allowed;
+	}
+		.calNineK-day-element.hidden {
+			display: none;
+		}
+		.calNineK-day-element .calNineK-dayNumber {
+			font-size: 20px;
+			text-align: center;
+		}
+	.calNineK-day-element, .seasonkey .keyicon.calUnavailable {
+		background: #fff url(../img/style/stripes.png) 50% 50% repeat;
+		opacity: 1;
+		filter: Alpha(Opacity=100);
+		text-align: center;
+		color: #999;
+		border: 0;
+	}
+		.calNineK-day-element.calSelectable {
+			background: #fff;
+			opacity: 1;
+			color: #5a5a5a;
+			border: 0;
+			cursor: pointer;
+		}
+		.calNineK-day-element.dayOrdering {
+			background: #f19607;
+			opacity: 1;
+			color: #fff;
+			border: 0;
+			cursor: pointer;
+		}
+
+
+
+/* Awesome product order calendar thing */
+#seasoncal {
+	background: #efefef;
+}
+div#seasoncal.calBox .calYear, #seasoncal .calMonth {
+	border-bottom: 1px solid #cbcbcb;
+	text-align: left;
+}
+div#seasoncal.calBox .calDay {
+	text-align: left;
+}
+	div#seasoncal.calBox .calLabel {
+		margin: 5px 10px;
+		min-width: 60px;
+		color: #8c8c8c;
+		vertical-align: top;
+		text-align: left;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#seasoncal .calYear .calElement, #seasoncal .calMonth .calElement {
+		background: none;
+		border: 0;
+		text-align: left;
+		font-size: 20px;
+		font-weight: bold;
+		color: #5a5a5a;
+	}
+	div#seasoncal.calBox .calYear .calElement {
+		width: 60px
+	}
+	div#seasoncal.calBox .calMonth .calElement {
+		width: 50px;
+	}
+		#seasoncal .calYear .calElement.selected, #seasoncal .calMonth .calElement.selected {
+			color: #f19607;
+		}
+#seasoncal .calElement.today {
+	/* border: 1px solid #e0e000; */
+}
+#seasoncal .calElement.selected {
+	/* background: #f19607;
+	color: #fff; */
+}
+#seasoncal .calElement:hover {
+	/* background: hotpink; */
+}
+#seasoncal .dayBox, .seasonkey .keyicon.calUnavailable {
+	margin-right: 5px;
+	background: #fff url(../img/style/stripes.png) 50% 50% repeat;
+	opacity: 1;
+	filter: Alpha(Opacity=100);
+	text-align: center;
+	color: #999;
+	border: 0;
+}
+	#seasoncal .calDay .calSelectable, .seasonkey .keyicon.calSelectable {
+		background: #fff;
+		opacity: 1;
+		color: #5a5a5a;
+		border: 0;
+	}
+	#seasoncal .calDay .dayOrdering, .seasonkey .keyicon.dayOrdering {
+		background: #f19607;
+		opacity: 1;
+		color: #fff;
+		border: 0;
+	}
+	#seasoncal .calDay .calSelectable:hover, #seasoncal .calDay .dayOrdering:hover {
+	/*
+		background: hotpink;
+		opacity: 1;
+		color: #fff;
+	*/
+	}
+
+/* order pages */
+tr.orderitem {
+
+}
+
+	tr.oi_status_Rejected td, tr.oi_status_Cancelled td, tr.oi_status_Expired td, tr.oi_status_Unavailable td  {
+		text-decoration: line-through;
+	}
+	tr.oi_status_Rejected td.oi_status {
+		text-decoration: none;
+	}
+
+	tr.order-recurring.Stopped, tr.order-recurring.Finished {
+		color: #aaa;
+	}
+	tr.order-recurring.Stopped td.or_status, tr.order-recurring.Finished td.or_status {
+		color: #800000;
+	}
+	tr.order-recurring.Confirmed td.or_status {
+		color: #008000;
+	}
+	tr.order-recurring.Stopped td.or_status td.Pending {
+		font-weight: bold;
+	}
+
+/* Admin ordering box */
+	.admin-ordering {
+		margin: 30px 0 15px 0;
+		border: 1px solid #ccc;
+		padding: 5px;
+	}
+
+/* report data tables */
+	h2.report-title {
+		margin-top: 40px;
+		text-align: center;
+	}
+	table.report-data {
+		width: 75%;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	table.report-data th, table.report-data td {
+		padding: 3px 6px;
+		border: 1px solid black;
+	}
+
+	div.report-chart {
+		margin: auto;
+		width: 800px;
+	}
+	div.report-chart#report-overview {}
+
+/* set user page */
+	.has_info_helper {
+		position: relative;
+	}
+	.form_info_helper {
+		position: absolute;
+		margin-left: 400px;
+		width: 350px;
+	}
+	.info_helper_btn {
+		cursor: pointer;
+	}

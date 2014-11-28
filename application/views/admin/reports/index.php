@@ -1,0 +1,1 @@
+View reports for <a href="admin/reports/orders">orders</a> and <a href="admin/reports/produce">produce</a>.

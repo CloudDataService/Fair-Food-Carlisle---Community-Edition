@@ -1,0 +1,67 @@
+
+Notes on how to install the system, setting it up for a new venue.
+
+= Instructions =
+* Set up database from sql/schema
+** and then sql/test-data (optional)
+
+* Rename/copy config files, and edit as appropriate
+** application/config/database.example.php to database.php
+** application/config/foodshop.example.php to foodshop.php
+
+* Edit images
+** public_html/img/favicon.ico
+** public_html/img/logo.png
+
+* Login with Email address: admin@example.com and Password: Password1
+
+* Set up shop, probably in this order.
+** Suppliers/Producers
+** Seasons
+** Produce Categories
+** Units? (have to do via the Db)
+** Produce
+** Buying Groups/Advocates
+** Members
+
+= Intallation Troubleshooting =
+Installation problems relating to a Ubuntu or possibly other default installations of the Apache server.
+
+After the installion of the database and the database and foodshop configuration files have been completed sucessfully the landing page with login details will be displayed.
+
+If you are served a blank page after clicking the login link you will need to check your server configuration first.
+
+Ensure that "RewriteEngine" is installed in the Apache server.
+You can check that with phpinfo.
+
+Create a text file named phpinfo.php and insert
+<?
+	phpinfo();
+?>
+
+Run this file from your server root (wwww) and search for "mod_rewrite"
+You will need to install it if not present.
+
+You will also need to test if the server can read the ".htaccess" file. Without that you will get blank pages only.
+
+Open the ".htaccess" file and add some random characters at the top of the page and save.
+If you now try to access your landing page and get a server error only you will need to configure the server to read ".htaccess" files.
+
+To make .htaccess files work as expected, you need to edit this file:
+
+/etc/apache2/sites-available/default
+Look for a section that looks like this:
+
+        <Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+                # Uncomment this directive is you want to see apache2's
+                # default start page (in /apache2-default) when you go to /
+                #RedirectMatch ^/$ /apache2-default/
+        </Directory>
+
+You need to modify the line containing AllowOverride None to read AllowOverride All.
+This tells Apache that it's okay to allow .htaccess files to over-ride previous directives.
+You must reload Apache before this change will have an effect.
